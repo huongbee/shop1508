@@ -1,3 +1,7 @@
+<?php
+$today = $data['today'];
+
+?>
 <div class="page-container">
           <div class="top-header top-bg-parallax">
             <div data-parallax="scroll" data-image-src="public/assets/images/slider/slider2-bg1.jpg" class="slides parallax-window">

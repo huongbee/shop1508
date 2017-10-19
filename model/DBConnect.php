@@ -28,7 +28,6 @@ class DBConnect{
 				$this->statement->bindParam($i+1,$option[$i]);
 			}
 		}
-
 		//$this->statement->execute(); //true||false
 		return $this->statement;
 	}
