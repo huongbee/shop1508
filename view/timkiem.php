@@ -22,7 +22,7 @@
                     <div class="row slick-padding">
                       <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="blog-item item swin-transition">
-                          <div class="block-img"><img src="assets/images/product/product-2a.jpg" alt="" class="img img-responsive">
+                          <div class="block-img"><img src="public/assets/images/product/product-2a.jpg" alt="" class="img img-responsive">
                             <div class="block-circle price-wrapper"><span class="price woocommerce-Price-amount amount"><span class="price-symbol">$</span>25.0</span></div>
                             <div class="group-btn"><a href="javascript:void(0)" class="swin-btn btn-link"><i class="icons fa fa-link"></i></a><a href="javascript:void(0)" class="swin-btn btn-add-to-card"><i class="fa fa-shopping-basket"></i></a></div>
                           </div>
@@ -36,7 +36,7 @@
                       </div>
                       <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="blog-item item swin-transition">
-                          <div class="block-img"><img src="assets/images/product/product-2b.jpg" alt="" class="img img-responsive">
+                          <div class="block-img"><img src="public/assets/images/product/product-2b.jpg" alt="" class="img img-responsive">
                             <div class="block-circle price-wrapper"><span class="price woocommerce-Price-amount amount"><span class="price-symbol">$</span>5.0</span></div>
                             <div class="group-btn"><a href="javascript:void(0)" class="swin-btn btn-link"><i class="icons fa fa-link"></i></a><a href="javascript:void(0)" class="swin-btn btn-add-to-card"><i class="fa fa-shopping-basket"></i></a></div>
                           </div>
@@ -50,7 +50,7 @@
                       </div>
                       <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="blog-item item swin-transition">
-                          <div class="block-img"><img src="assets/images/product/product-2c.jpg" alt="" class="img img-responsive">
+                          <div class="block-img"><img src="public/assets/images/product/product-2c.jpg" alt="" class="img img-responsive">
                             <div class="block-circle price-wrapper"><span class="price woocommerce-Price-amount amount"><span class="price-symbol">$</span>20.0</span></div>
                             <div class="group-btn"><a href="javascript:void(0)" class="swin-btn btn-link"><i class="icons fa fa-link"></i></a><a href="javascript:void(0)" class="swin-btn btn-add-to-card"><i class="fa fa-shopping-basket"></i></a></div>
                           </div>
@@ -64,7 +64,7 @@
                       </div>
                       <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="blog-item item swin-transition">
-                          <div class="block-img"><img src="assets/images/product/product-2e.jpg" alt="" class="img img-responsive">
+                          <div class="block-img"><img src="public/assets/images/product/product-2e.jpg" alt="" class="img img-responsive">
                             <div class="block-circle price-wrapper"><span class="price woocommerce-Price-amount amount"><span class="price-symbol">$</span>45.0</span></div>
                             <div class="group-btn"><a href="javascript:void(0)" class="swin-btn btn-link"><i class="icons fa fa-link"></i></a><a href="javascript:void(0)" class="swin-btn btn-add-to-card"><i class="fa fa-shopping-basket"></i></a></div>
                           </div>
@@ -81,7 +81,7 @@
                       </div>
                       <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="blog-item item swin-transition">
-                          <div class="block-img"><img src="assets/images/product/product-2f.jpg" alt="" class="img img-responsive">
+                          <div class="block-img"><img src="public/assets/images/product/product-2f.jpg" alt="" class="img img-responsive">
                             <div class="block-circle price-wrapper"><span class="price woocommerce-Price-amount amount"><span class="price-symbol">$</span>15.0</span></div>
                             <div class="group-btn"><a href="javascript:void(0)" class="swin-btn btn-link"><i class="icons fa fa-link"></i></a><a href="javascript:void(0)" class="swin-btn btn-add-to-card"><i class="fa fa-shopping-basket"></i></a></div>
                           </div>
@@ -98,7 +98,7 @@
                       </div>
                       <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="blog-item item swin-transition">
-                          <div class="block-img"><img src="assets/images/product/product-2d.jpg" alt="" class="img img-responsive">
+                          <div class="block-img"><img src="public/assets/images/product/product-2d.jpg" alt="" class="img img-responsive">
                             <div class="block-circle price-wrapper"><span class="price woocommerce-Price-amount amount"><span class="price-symbol">$</span>30.0</span></div>
                             <div class="group-btn"><a href="javascript:void(0)" class="swin-btn btn-link"><i class="icons fa fa-link"></i></a><a href="javascript:void(0)" class="swin-btn btn-add-to-card"><i class="fa fa-shopping-basket"></i></a></div>
                           </div>
@@ -112,7 +112,7 @@
                       </div>
                       <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="blog-item item swin-transition">
-                          <div class="block-img"><img src="assets/images/product/product-2k.jpg" alt="" class="img img-responsive">
+                          <div class="block-img"><img src="public/assets/images/product/product-2k.jpg" alt="" class="img img-responsive">
                             <div class="block-circle price-wrapper"><span class="price woocommerce-Price-amount amount"><span class="price-symbol">$</span>45.0</span></div>
                             <div class="group-btn"><a href="javascript:void(0)" class="swin-btn btn-link"><i class="icons fa fa-link"></i></a><a href="javascript:void(0)" class="swin-btn btn-add-to-card"><i class="fa fa-shopping-basket"></i></a></div>
                           </div>
@@ -126,7 +126,7 @@
                       </div>
                       <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="blog-item item swin-transition">
-                          <div class="block-img"><img src="assets/images/product/product-2l.jpg" alt="" class="img img-responsive">
+                          <div class="block-img"><img src="public/assets/images/product/product-2l.jpg" alt="" class="img img-responsive">
                             <div class="block-circle price-wrapper"><span class="price woocommerce-Price-amount amount"><span class="price-symbol">$</span>15.0</span></div>
                             <div class="group-btn"><a href="javascript:void(0)" class="swin-btn btn-link"><i class="icons fa fa-link"></i></a><a href="javascript:void(0)" class="swin-btn btn-add-to-card"><i class="fa fa-shopping-basket"></i></a></div>
                           </div>
@@ -140,7 +140,7 @@
                       </div>
                       <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="blog-item item swin-transition">
-                          <div class="block-img"><img src="assets/images/product/product-2n.jpg" alt="" class="img img-responsive">
+                          <div class="block-img"><img src="public/assets/images/product/product-2n.jpg" alt="" class="img img-responsive">
                             <div class="block-circle price-wrapper"><span class="price woocommerce-Price-amount amount"><span class="price-symbol">$</span>30.0</span></div>
                             <div class="group-btn"><a href="javascript:void(0)" class="swin-btn btn-link"><i class="icons fa fa-link"></i></a><a href="javascript:void(0)" class="swin-btn btn-add-to-card"><i class="fa fa-shopping-basket"></i></a></div>
                           </div>
