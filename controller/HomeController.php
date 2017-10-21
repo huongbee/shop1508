@@ -9,8 +9,9 @@ class HomeController extends Controller{
 
 		$model = new HomeModel;
 		$today = $model->getTodayFoods();
+		$foods = $model->getAll();
 
-		$arrayData = ['today'=>$today];
+		$arrayData = ['today'=>$today,'foods'=>$foods];
 
 		return $this->loadView('trangchu',$arrayData);
 	}

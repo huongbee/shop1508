@@ -9,6 +9,15 @@ class HomeModel extends DBConnect{
 		$this->setQuery($sql);
 		return $this->loadAllRows();
 	}
+
+	public function getAll(){
+		$sql = "SELECT * FROM `foods`";
+	
+		$this->setQuery($sql);
+		return $this->loadAllRows();
+	}
+
+
 }
 
 
