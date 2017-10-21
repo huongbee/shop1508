@@ -18,6 +18,12 @@ class HomeModel extends DBConnect{
 	}
 
 
+	public function getFoodPagination($vitri,$soluong){
+		$sql = "SELECT * FROM `foods` LIMIT $vitri,$soluong";
+		$this->setQuery($sql);
+		return $this->loadAllRows();
+	}
+
 }
 
 
