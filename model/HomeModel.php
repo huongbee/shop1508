@@ -33,7 +33,7 @@ class HomeModel extends DBConnect{
 
 
 
-
+/*
 function stripUnicode($str){
     if(!$str) return false;
     $unicode = array(
@@ -52,12 +52,17 @@ function stripUnicode($str){
         'y' => 'ý|ỳ|ỷ|ỹ|ỵ',
         'Y' => 'Ý|Ỳ|Ỷ|Ỹ|Ỵ'
     );
+
     foreach($unicode as $khongdau=>$codau){
         $arr = explode("|", $codau);
         $str = str_replace($arr,$khongdau,$str);
     }
     return $str;
+    //Chào "bạn"
+    //Chao ban
+
 }
+
 function changeTitle($str){
     $str = trim($str);
     if($str=="") return "";
@@ -66,10 +71,36 @@ function changeTitle($str){
     $str = str_replace(".", '', $str);
     $str = str_replace("!", '', $str);
     $str = str_replace("/", '', $str);
-    $str = stripUnicode($str);
-    $str = mb_convert_case($str, MB_CASE_LOWER,'utf-8');
-    $str = str_replace(' ', '-', $str);
+    $str = str_replace(",", '', $str);
+
+    $str = stripUnicode($str); //Chao ban
+    $str = mb_convert_case($str, MB_CASE_LOWER,'utf-8'); //chao ban
+    $str = str_replace(' ', '-', $str); //chao-ban
     return $str;
 }
+
+$sql = "SELECT name FROM foods";
+$model = new DBConnect;
+$model->setQuery($sql);
+$foods = $model->loadAllRows();
+//print_r($foods);
+$alias = [];
+
+for($i=1; $i<=count($foods); $i++){
+	$alias = changeTitle($foods[$i-1]->name);
+
+	$sql = "INSERT INTO page_url(id,url) VALUES ($i,'$alias')";
+	$model->setQuery($sql);
+	$model->executeQuery();
+
+	$name = $foods[$i-1]->name;
+	$sql2 = "UPDATE foods SET id_url = $i WHERE name='$name'";
+	$m = new DBConnect;
+	$m->setQuery($sql2);
+	$m->executeQuery();
+}
+echo 'done!';
+*/
+// ALTER TABLE foods ADD FOREIGN KEY (id_url) REFERENCES page_url(id)
 
 ?>
