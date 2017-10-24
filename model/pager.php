@@ -35,14 +35,10 @@ class Pager{
 		$paginationHTML 	= '';
 		if($this->_totalPage > 1){
 			$actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-			if(isset($_GET['page'])){
-				if((int)($_GET['page'])>=10){
-					$actual_link = substr($actual_link,0,-8);
-				}
-				else{
-					$actual_link = substr($actual_link,0,-7);
-				}
-			}
+			
+			$actual_link = explode('?page=', $actual_link)[0];
+			//$actual_link = $arr[0];
+
 			$start 	= '';
 			$prev 	= '';
 			if($this->_currentPage > 1){

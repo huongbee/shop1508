@@ -9,7 +9,7 @@ class HomeController extends Controller{
 
 		$model = new HomeModel;
 		$today = $model->getTodayFoods();
-		$foods = $model->getAll();
+		$foods = $model->getFoodPagination();
 
 		$totalItem = count($foods);
 		$currentPage = (isset($_GET['page']) && $_GET['page']!=0) ? abs($_GET['page']) : 1;
