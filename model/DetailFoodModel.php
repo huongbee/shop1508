@@ -27,5 +27,4 @@ class DetailFoodModel extends DBConnect{
 		$this->setQuery($sql);
 		return $this->loadAllRows();
 	}
-	}
 }

@@ -4,7 +4,10 @@ require_once('DBConnect.php');
 class HomeModel extends DBConnect{
 
 	public function getTodayFoods(){
-		$sql = "SELECT * FROM `foods` where today=1";
+		$sql = "SELECT f.*, p.url FROM foods f
+                INNER JOIN page_url p
+                ON f.id_url = p.id
+                where today=1";
 	
 		$this->setQuery($sql);
 		return $this->loadAllRows();

@@ -51,7 +51,7 @@ $foods = $data['foods'];
                     ?>
                     <div class="item product-01">
                       <div class="item-left"><img src="public/assets/images/hinh_mon_an/<?=$trongngay->image?>" alt="" class="img img-responsive">
-                        <div class="content-wrapper"><a href="chi-tiet-mon-an.html" class="title"><?=$trongngay->name?></a>
+                        <div class="content-wrapper"><a href="detail-food.php?id=<?=$trongngay->id?>&alias=<?=$trongngay->url?>" class="title"><?=$trongngay->name?></a>
                           <div class="dot">...........................</div>
                           <div class="des"><?=$trongngay->summary?></div>
                         </div>
