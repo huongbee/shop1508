@@ -986,6 +986,7 @@ header.header-fixed {
   .product-single .product-summary .product-info {
     margin-bottom: 25px; }
   .product-single .product-summary .product-desc {
+    margin-top: 50px;
     margin-bottom: 25px; }
   .product-single .product-summary .product-meta-info {
     margin-bottom: 30px; }

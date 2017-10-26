@@ -83,8 +83,9 @@ $foods = $data['foods'];
                       <div class="block-circle price-wrapper"><span class="price woocommerce-Price-amount amount"><?=number_format($food->price)?></span> <span class="price-symbol">vnđ</span></div>
                       <div class="group-btn"><a href="chi-tiet-mon-an.html" class="swin-btn btn-link"><i class="icons fa fa-link"></i></a><a href="javascript:void(0)" class="swin-btn btn-add-to-card"><i class="fa fa-shopping-basket"></i></a></div>
                     </div>
+    <!-- detail-food.php?id=<?=$food->id?>&alias=<?=$food->url?> -->
                     <div class="block-content">
-                      <h5 class="title"><a href="chi-tiet-mon-an.html"><?=$food->name?></a></h5>
+                      <h5 class="title"><a href="detail-food.php?id=<?=$food->id?>&alias=<?=$food->url?>"><?=$food->name?></a></h5>
                       <div class="product-info">
                        <?=$food->summary?>
                       </div>

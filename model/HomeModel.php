@@ -19,7 +19,9 @@ class HomeModel extends DBConnect{
 
 
 	public function getFoodPagination($vitri =-1 ,$soluong=0){
-		$sql = "SELECT * FROM foods";
+		$sql = "SELECT f.*, p.url FROM foods f
+                INNER JOIN page_url p
+                ON f.id_url = p.id";
 
 		if($vitri >= 0 && $soluong > 0){
 			$sql .= " LIMIT $vitri,$soluong";
