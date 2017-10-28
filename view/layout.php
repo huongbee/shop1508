@@ -357,6 +357,36 @@
     <script src="public/assets/js/elements.js"></script>
     <script src="public/assets/js/widget.js"></script>
    
+    <script>
+      $(document).ready(function(){
+
+        $('.btn-add-to-card').click(function(){
+          var id_sp = $(this).attr('data-id')
+          var soluong = 1;
+          //console.log(id_sp)
+
+            $.ajax({
+                url: "cart.php", //url chạy ngầm ở console
+                data:{
+                    id : id_sp, // biến truyền đi : giá trị của id, lấy ở line 364
+                    qty: soluong
+                },
+                type: "POST",
+                success: function(result){
+                    console.log(result)
+                },
+                error: function(){
+                    console.log("Lỗi")
+                }
+            }).done(function() {
+                console.log("chạy xong ajax")
+            });
+
+        })
+
+      })
+      
+    </script>
   </body>
 
 <!-- Mirrored from swin-themes.com/html/fooday/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Sep 2017 09:12:42 GMT -->
