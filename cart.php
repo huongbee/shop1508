@@ -1,5 +1,8 @@
 <?php
-//echo $_POST['id'].'-'.$_POST['qty'].'----'."ajax thành công";
 
+include_once('controller/CartController.php');
+
+$c = new CartController;
+$c->addToCart();
 
 ?>

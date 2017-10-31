@@ -111,7 +111,21 @@
         <?php
           include_once("$view.php");
         ?>
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-md">
 
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-body">
+              <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+          </div>
+        </div>
         <footer>
           
           <div class="footer-top"></div>
@@ -373,7 +387,8 @@
                 },
                 type: "POST",
                 success: function(result){
-                    console.log(result)
+                    //console.log(result)
+                    $('#myModal').modal('show');
                 },
                 error: function(){
                     console.log("Lỗi")

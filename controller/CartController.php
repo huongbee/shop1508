@@ -1,7 +1,7 @@
 <?php
 include_once('model/DetailFoodModel.php');
-include_once('Cart.php');
-
+include_once('controller/Cart.php');
+session_start();
 
 class CartController{
 
@@ -11,8 +11,18 @@ class CartController{
 		$model = new DetailFoodModel();
 		$sanpham = $model->getDetail($id);
 
-		$cart = new Cart();
-		
+		$oldCart = isset($_SESSION['cart']) ? $_SESSION['cart'] : null;
+
+		$cart = new Cart($oldCart);
+
+		$cart->add($sanpham);
+
+		$_SESSION['cart'] = $cart;
+
+		echo "<pre>";
+		print_r($_SESSION['cart']);
+		echo "</pre>";
+
 
 	}
 
