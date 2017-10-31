@@ -19,9 +19,8 @@ class CartController{
 
 		$_SESSION['cart'] = $cart;
 
-		echo "<pre>";
-		print_r($_SESSION['cart']);
-		echo "</pre>";
+		//print_r($sanpham);
+		echo $sanpham->name;
 
 
 	}

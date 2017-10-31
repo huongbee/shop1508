@@ -12,6 +12,15 @@
             <section class="section-reservation-form padding-top-100 padding-bottom-100">
               <div class="container">
                 <div class="section-content">
+                  <?php
+                  if(empty($data->items)){
+                    echo '
+                      <div class="swin-sc swin-sc-title style-2">
+                        <h3 class="title"><span>Giỏ hàng rỗng</span></h3>
+                      </div>';
+                  }
+                  else{
+                  ?>
                   <div class="swin-sc swin-sc-title style-2">
                     <h3 class="title"><span>Chi tiết giỏ hàng</span></h3>
                   </div>
@@ -112,6 +121,9 @@
                       </form>
                     </div>
                     </div>
+                  <?php
+                  }
+                  ?>
                 </div>
               </div>
             </section>

@@ -117,10 +117,11 @@
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-body">
-              <p>Some text in the modal.</p>
+              <p>Đã thêm <b class="nameFood">sp</b> vào giỏ hàng</p>
+              <p><a href="checkout.php">Xem giỏ hàng</a>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Close</button>
             </div>
           </div>
 
@@ -377,7 +378,7 @@
         $('.btn-add-to-card').click(function(){
           var id_sp = $(this).attr('data-id')
           var soluong = 1;
-          //console.log(id_sp)
+          console.log(id_sp)
 
             $.ajax({
                 url: "cart.php", //url chạy ngầm ở console
@@ -387,14 +388,14 @@
                 },
                 type: "POST",
                 success: function(result){
-                    //console.log(result)
+                    $('.nameFood').html(result)
                     $('#myModal').modal('show');
                 },
                 error: function(){
                     console.log("Lỗi")
                 }
             }).done(function() {
-                console.log("chạy xong ajax")
+                //console.log("chạy xong ajax")
             });
 
         })

@@ -64,7 +64,14 @@ $relatedFoods = $data['relatedFoods'];
             <div class="blog-item item swin-transition">
               <div class="block-img"><img src="public/assets/images/hinh_mon_an/<?=$same->image?>" style="height: 300px" alt="" class="img img-responsive">
                 <div class="block-circle price-wrapper"><span class="price woocommerce-Price-amount amount"><?=number_format($same->price)?></span> <span class="price-symbol"> vnđ</span></div>
-                <div class="group-btn"><a href="javascript:void(0)" class="swin-btn btn-link"><i class="icons fa fa-link"></i></a><a href="javascript:void(0)" class="swin-btn btn-add-to-card"><i class="fa fa-shopping-basket"></i></a></div>
+                <div class="group-btn">
+                  <a href="javascript:void(0)" class="swin-btn btn-link">
+                    <i class="icons fa fa-link"></i>
+                  </a>
+                  <a href="javascript:void(0)" class="swin-btn btn-add-to-card" data-id="<?=$same->id?>">
+                    <i class="fa fa-shopping-basket"></i>
+                  </a>
+                </div>
               </div>
               <div class="block-content">
                 <h5 class="title"><a href="detail-food.php?id=<?=$same->id?>&alias=<?=$same->url?>"><?=$same->name?></a></h5>
