@@ -55,14 +55,16 @@
                           </select>
                           <?php // echo  $i==$sanpham['qty'] ? "selected" : ''?>
                           </td>
-                          <td><b style="color: blue"><?=number_format($sanpham['price'])?> vnđ</b></td>
+                          <td>
+                            <b style="color: blue" id="dongia-<?=$idSP?>"><?=number_format($sanpham['price'])?> vnđ</b>
+                            </td>
                           <td><a href="#" class="remove" title="Remove this item"><i class="fa fa-trash-o fa-2x"></i></a></td>
                         </tr>
                         <?php endforeach ?>
 
                         <tr>
                           <td colspan="3"  style="color: red; font-size: 20px; text-align: right!important;"><b>Tổng tiền:</b></td>
-                          <td><b style="color: red; font-size: 20px"> <?=number_format($data->totalPrice)?> vnđ</b></td>
+                          <td><b style="color: red; font-size: 20px" id="totalPrice"> <?=number_format($data->totalPrice)?> vnđ</b></td>
                           <td></td>
                         </tr>
                       </tbody>
@@ -178,8 +180,14 @@
                     action: action
                 },
                 type: "POST",
+                dataType:"json",
                 success: function(result){
-                    console(result);
+                    var dongiaSP = result.dongiaSanpham
+                    var tongtien = result.totalPrice
+                    // console.log(tongtien);
+                    // console.log(dongiaSP);
+                    $('#totalPrice').html(tongtien)
+                    $('#dongia-'+idSP).html(dongiaSP)
                 },
                 error: function(){
                     console.log("Lỗi")

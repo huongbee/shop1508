@@ -11,6 +11,10 @@ if($action == "add"){
 elseif($action=="update")
 	$c->updateCart();
 
+else{
+	// delete
+}
+
 
 
 ?>
