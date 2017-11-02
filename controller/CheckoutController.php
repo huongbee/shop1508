@@ -11,7 +11,7 @@ class CheckoutController extends Controller{
 
 		$cart = new Cart($oldCart);
 		//session_destroy();
-		print_r($cart);
+		//print_r($cart);
 		return $this->loadView('giohang',$cart);
 	}
 
