@@ -3,6 +3,14 @@
 include_once('controller/CartController.php');
 
 $c = new CartController;
-$c->addToCart();
+
+$action = isset($_POST['action']) ? $_POST['action'] : "add";
+if($action == "add"){
+	$c->addToCart();
+}
+elseif($action=="update")
+	$c->updateCart();
+
+
 
 ?>

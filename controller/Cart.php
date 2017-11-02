@@ -31,7 +31,7 @@ class Cart
 			$this->totalPrice = $oldCart->totalPrice;
 		}
 	}
-
+	
 	public function add($item, $qty=1){
 		$giohang = ['qty'=>0, 'price' => $item->price, 'item' => $item];
 		if($this->items){
@@ -47,12 +47,13 @@ class Cart
 		
 	}
 	//update
-	public function update($item, $id, $qty=1){
+	public function update($item, $qty=1){
 		$giohang = [
 			'qty'=>$qty, 
 			'price' => $item->price, 
 			'item' => $item
 		];
+		$id = $item->id;
 		if($this->items){
 			if(array_key_exists($id, $this->items)){
 				$this->totalPrice -= $this->items[$id]['price'];

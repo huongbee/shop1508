@@ -39,7 +39,7 @@
                       <tbody>
                         <?php
 
-                        foreach($data->items as $sanpham):
+                        foreach($data->items as $idSP => $sanpham):
                         ?>
                         <tr>
                           <td>
@@ -48,7 +48,7 @@
                           </td>
                           <td><b style="color: blue"><?=number_format($sanpham['item']->price)?> vnđ</b></td>
                           <td>
-                          <select name="product-qty" id="product-qty" class="form-control" width="50">
+                          <select name="product-qty" id="product-qty" class="form-control product-qty" width="50" data-id="<?=$idSP?>">
                             <?php for($i=1; $i<=10; $i++){ ?>
                               <option value="<?=$i?>" <?= $i==$sanpham['qty'] ? "selected" : ''?>><?=$i?></option>
                             <?php }?>
@@ -162,3 +162,29 @@
         </section>
       </div>
     </div>
+<script>
+    $(document).ready(function(){
+        $('.product-qty').change(function(){
+            var soluong = $(this).val();
+            var idSP = $(this).attr('data-id');
+            var action = "update"
+            // console.log(soluong);
+            // console.log(idSP);
+            $.ajax({
+                url: "cart.php", //url chạy ngầm ở console
+                data:{
+                    id : idSP, // biến truyền đi : giá trị của id, lấy ở line 168
+                    qty: soluong,
+                    action: action
+                },
+                type: "POST",
+                success: function(result){
+                    console(result);
+                },
+                error: function(){
+                    console.log("Lỗi")
+                }
+            })
+        })
+    })
+</script>
