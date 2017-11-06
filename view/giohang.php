@@ -11,13 +11,15 @@
       <div class="page-content-wrapper">
         <section class="section-reservation-form padding-top-100 padding-bottom-100">
           <div class="container">
-            <div class="section-content">
+            <div class="section-content cart-content">
               <?php
               if(empty($data->items)){
                 echo '
                   <div class="swin-sc swin-sc-title style-2">
                     <h3 class="title"><span>Giỏ hàng rỗng</span></h3>
                   </div>';
+
+                  header("refresh:3; url=index.php");
               }
               else{
               ?>
@@ -41,7 +43,7 @@
 
                         foreach($data->items as $idSP => $sanpham):
                         ?>
-                        <tr>
+                        <tr id="sanpham-<?=$idSP?>">
                           <td>
                             <img src="public/assets/images/hinh_mon_an/<?=$sanpham['item']->image?>" width="150px">
                             <p><br><b><?=$sanpham['item']->name?></b></p>
@@ -58,7 +60,7 @@
                           <td>
                             <b style="color: blue" id="dongia-<?=$idSP?>"><?=number_format($sanpham['price'])?> vnđ</b>
                             </td>
-                          <td><a href="#" class="remove" title="Remove this item"><i class="fa fa-trash-o fa-2x"></i></a></td>
+                          <td><a class="remove" title="Remove this item" data-id="<?=$idSP?>"><i class="fa fa-trash-o fa-2x"></i></a></td>
                         </tr>
                         <?php endforeach ?>
 
@@ -188,6 +190,45 @@
                     // console.log(dongiaSP);
                     $('#totalPrice').html(tongtien)
                     $('#dongia-'+idSP).html(dongiaSP)
+                },
+                error: function(){
+                    console.log("Lỗi")
+                }
+            })
+        })
+
+        $('.remove').on("click",function(){
+            var idSP = $(this).attr('data-id');
+            var action = "delete"
+            //console.log(idSP);
+            $.ajax({
+                url: "cart.php", //url chạy ngầm ở console
+                data:{
+                    id : idSP, // biến truyền đi : giá trị của id, lấy ở line 168
+                    action: action
+                },
+                type: "POST",
+                success: function(result){
+                    //console.log(result);
+                    if(result == 0){
+
+                        var data = '<div class="swin-sc swin-sc-title style-2"><h3 class="title"><span>Giỏ hàng rỗng</span></h3></div>'
+                        $('.cart-content').fadeOut(800)
+                                            .delay(1000)
+                                            .queue(function(n) {
+                                                $(this).html(data);
+                                                n();
+                                            }).fadeIn(1000)
+                        
+                        setInterval(function(){ //đợi 3s thì thực hiện công việc ở line 219
+                            window.location.href = "index.php";;
+                        }, 5000);
+                    }
+                    else{
+                        $('#totalPrice').html(result + " vnđ")
+                        $('#sanpham-'+idSP).hide(500)
+                    }
+                    
                 },
                 error: function(){
                     console.log("Lỗi")

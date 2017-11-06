@@ -7,7 +7,7 @@ class CartController{
 
 	public function addToCart(){
 		$id = (int)$_POST['id'];
-
+		$qty = (int)$_POST['qty'];
 		$model = new DetailFoodModel();
 		$sanpham = $model->getDetail($id);
 
@@ -15,7 +15,7 @@ class CartController{
 
 		$cart = new Cart($oldCart);
 
-		$cart->add($sanpham);
+		$cart->add($sanpham,$qty);
 
 		$_SESSION['cart'] = $cart;
 
@@ -44,6 +44,20 @@ class CartController{
 		];
 		echo json_encode($arr);
 		//print_r($_SESSION['cart']);
+
+	}
+
+	public function deleteCart(){
+		$id = (int)$_POST['id'];
+		$oldCart = isset($_SESSION['cart']) ? $_SESSION['cart'] : null;
+
+		$cart = new Cart($oldCart);
+
+		$cart->removeItem($id);
+
+		$_SESSION['cart'] = $cart;
+
+		echo number_format($cart->totalPrice);
 
 	}
 

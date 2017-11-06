@@ -13,6 +13,7 @@ elseif($action=="update")
 
 else{
 	// delete
+	$c->deleteCart();
 }
 
 

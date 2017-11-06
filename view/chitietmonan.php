@@ -41,9 +41,11 @@ $relatedFoods = $data['relatedFoods'];
               <div class="product-quanlity">
                 <form action="#">
                   <div class="input-group">
-                    <input type="text" name="quanlity" placeholder="" value="1" class="form-control"><a href="javascript:void(0)" class="quanlity-plus"><i class="fa fa-plus"></i></a><a href="javascript:void(0)" class="quanlity-minus"><i class="fa fa-minus"></i></a>
+                    <input type="text" name="quanlity" placeholder="" value="1" class="form-control txtSoluong-<?=$food->id?>">
+                      <a href="javascript:void(0)" class="quanlity-plus"><i class="fa fa-plus"></i></a>
+                      <a href="javascript:void(0)" class="quanlity-minus"><i class="fa fa-minus"></i></a>
                   </div>
-                  <div class="add-to-cart"><a href="javascript:void(0)" class="swin-btn"> <span>Add To Cart</span></a></div>
+                  <div class="add-to-cart btn-add-to-card btnAddToCart" data-id="<?=$food->id?>" ><a href="javascript:void(0)" class="swin-btn"> <span>Add To Cart</span></a></div>
                 </form>
               </div>
               
@@ -69,7 +71,8 @@ $relatedFoods = $data['relatedFoods'];
                     <i class="icons fa fa-link"></i>
                   </a>
                   <a href="javascript:void(0)" class="swin-btn btn-add-to-card" data-id="<?=$same->id?>">
-                    <i class="fa fa-shopping-basket"></i>
+                    <input type="hidden" value="1" class="txtSoluong-<?=$same->id?>">
+                    <i class="fa fa-shopping-basket "></i>
                   </a>
                 </div>
               </div>

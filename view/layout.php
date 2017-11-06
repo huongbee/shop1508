@@ -1,3 +1,8 @@
+<?php
+ob_start();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
   
@@ -373,32 +378,38 @@
     <script src="public/assets/js/widget.js"></script>
    
     <script>
-      $(document).ready(function(){
 
+      function ajaxAddCart(id_sp,soluong){
+        $.ajax({
+          url: "cart.php", //url chạy ngầm ở console
+          data:{
+              id : id_sp, // biến truyền đi : giá trị của id, lấy ở line 364
+              qty: soluong
+          },
+          type: "POST",
+          success: function(result){
+              $('.nameFood').html(result)
+              $('#myModal').modal('show');
+          },
+          error: function(){
+              console.log("Lỗi")
+          }
+        })
+      }
+      $(document).ready(function(){
+        //mua ở trang chủ
         $('.btn-add-to-card').click(function(){
           var id_sp = $(this).attr('data-id')
-          var soluong = 1;
-          console.log(id_sp)
-
-            $.ajax({
-                url: "cart.php", //url chạy ngầm ở console
-                data:{
-                    id : id_sp, // biến truyền đi : giá trị của id, lấy ở line 364
-                    qty: soluong
-                },
-                type: "POST",
-                success: function(result){
-                    $('.nameFood').html(result)
-                    $('#myModal').modal('show');
-                },
-                error: function(){
-                    console.log("Lỗi")
-                }
-            }).done(function() {
-                //console.log("chạy xong ajax")
-            });
-
+          var soluong = $('.txtSoluong-'+id_sp).val();
+          ajaxAddCart(id_sp,soluong)
         })
+
+        //mua ở trang chi tiết
+        // $('.btnAddToCart').click(function(){
+        //   var id_sp = $(this).attr('data-id')
+        //   var soluong = $('.txtSoluong').val();
+        //   ajaxAddCart(id_sp,soluong)
+        // })
 
       })
       

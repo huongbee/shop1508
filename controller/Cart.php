@@ -75,7 +75,7 @@ class Cart
 			unset($this->items[$id]);
 		}
 	}
-	//xóa nhiều
+	//xóa sản phẩm khỏi cart
 	public function removeItem($id){
 		$this->totalQty -= $this->items[$id]['qty'];
 		$this->totalPrice -= $this->items[$id]['price'];
