@@ -7,7 +7,7 @@ class CartController{
 
 	public function addToCart(){
 		$id = (int)$_POST['id'];
-		$qty = (int)$_POST['qty'];
+		$qty = isset($_POST['qty']) ? (int)$_POST['qty'] : 1;
 		$model = new DetailFoodModel();
 		$sanpham = $model->getDetail($id);
 

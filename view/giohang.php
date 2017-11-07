@@ -13,6 +13,16 @@
           <div class="container">
             <div class="section-content cart-content">
               <?php
+              if(isset($_COOKIE['error'])){
+              ?>
+              <div class="alert alert-danger alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <?=$_COOKIE['error']?>
+              </div>
+
+              <?php
+              }
+
               if(empty($data->items)){
                 echo '
                   <div class="swin-sc swin-sc-title style-2">
@@ -78,17 +88,17 @@
                   <div class="swin-sc swin-sc-title style-2">
                     <h3 class="title"><span>Đặt hàng</span></h3>
                   </div>
-                  <form>
+                  <form method="POST" action="checkout.php">
                     <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                        <input type="text" placeholder="Fullname" class="form-control">
+                        <input type="text" name="fullname" placeholder="Fullname" class="form-control">
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-                        <input type="text" placeholder="Email" class="form-control">
+                        <input type="text" name="email" placeholder="Email" class="form-control">
                       </div>
                     </div>
                     <div class="form-group">
@@ -96,7 +106,7 @@
                         <div class="input-group-addon">
                           <div class="fa fa-map-marker"></div>
                         </div>
-                        <input type="text" placeholder="Address" class="form-control">
+                        <input type="text" name="address" placeholder="Address" class="form-control">
                       </div>
                     </div>
                     <div class="form-group">
@@ -104,21 +114,24 @@
                         <div class="input-group-addon">
                           <div class="fa fa-phone"></div>
                         </div>
-                        <input type="text" placeholder="Phone" class="form-control">
+                        <input type="text" name="phone" placeholder="Phone" class="form-control">
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <textarea placeholder="Message" class="form-control"></textarea>
+                      <textarea placeholder="Message" name="message" class="form-control"></textarea>
                     </div>
                      <div class="form-group">
-                      <div class="swin-btn-wrap center"><a href="#" class="swin-btn center form-submit"> <span>Checkout</span></a></div>
+                      <div class="swin-btn-wrap center"><button type="submit" class="swin-btn center form-submit" name="btnCheckout"> <span>Checkout</span></button></div>
                     </div>
                   </form>
                 </div>
                 </div>
               <?php
               }
+
+              //echo isset($_POST['fullname']) ? $_POST['fullname'] : 'chưa có';
+
               ?>
             </div>
           </div>
