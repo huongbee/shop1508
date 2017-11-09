@@ -5,7 +5,7 @@ class CheckoutModel extends DBConnect{
 
 	public function insertCustomer($name,$email,$address,$phone){
 		$sql = "INSERT INTO customers(name,email,address,phone)
-				VALUES('$name',null,'$address','$phone')";
+				VALUES('$name','$email','$address','$phone')";
 
 		$this->setQuery($sql);
 		if($this->executeQuery()){
@@ -32,5 +32,24 @@ class CheckoutModel extends DBConnect{
 		$this->setQuery($sql);
 		return $this->executeQuery();
 	}
+
+	public function deleteRecentInsertCus($idCustomer){
+		$sql ="DELETE FROM customers WHERE id=$idCustomer";
+		$this->setQuery($sql);
+		return $this->executeQuery();
+	}
+
+	public function deleteRecentInsertBill($idBill){
+		$sql ="DELETE FROM bills WHERE id=$idBill";
+		$this->setQuery($sql);
+		return $this->executeQuery();
+	}
+
+	public function deleteRecentInsertBillDetail($idBill){
+		$sql ="DELETE FROM bill_detail WHERE id_bill=$idBill";
+		$this->setQuery($sql);
+		return $this->executeQuery();
+	}
+
 
 }

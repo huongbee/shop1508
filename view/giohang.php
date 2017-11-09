@@ -23,13 +23,23 @@
               <?php
               }
 
+              if(isset($_COOKIE['success'])){
+              ?>
+              <div class="alert alert-success alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <?=$_COOKIE['success']?>
+              </div>
+
+              <?php
+              }
+
               if(empty($data->items)){
                 echo '
                   <div class="swin-sc swin-sc-title style-2">
                     <h3 class="title"><span>Giỏ hàng rỗng</span></h3>
                   </div>';
 
-                  header("refresh:3; url=index.php");
+                  header("refresh:5; url=index.php");
               }
               else{
               ?>
@@ -92,13 +102,13 @@
                     <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                        <input type="text" name="fullname" placeholder="Fullname" class="form-control">
+                        <input type="text" name="fullname" placeholder="Fullname" class="form-control" required>
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-                        <input type="text" name="email" placeholder="Email" class="form-control">
+                        <input type="text" name="email" required placeholder="Email" class="form-control">
                       </div>
                     </div>
                     <div class="form-group">
@@ -106,7 +116,7 @@
                         <div class="input-group-addon">
                           <div class="fa fa-map-marker"></div>
                         </div>
-                        <input type="text" name="address" placeholder="Address" class="form-control">
+                        <input type="text" name="address" placeholder="Address" class="form-control" required>
                       </div>
                     </div>
                     <div class="form-group">
@@ -114,7 +124,7 @@
                         <div class="input-group-addon">
                           <div class="fa fa-phone"></div>
                         </div>
-                        <input type="text" name="phone" placeholder="Phone" class="form-control">
+                        <input required type="text" name="phone" placeholder="Phone" class="form-control">
                       </div>
                     </div>
 
