@@ -3,6 +3,7 @@ include_once('Controller.php');
 include_once('controller/Cart.php');
 include_once('model/CheckoutModel.php');
 include_once('include/function.php');
+include_once('include/mailer.php');
 session_start();
 
 class CheckoutController extends Controller{
@@ -44,7 +45,10 @@ class CheckoutController extends Controller{
 				$total = $cart->totalPrice;
 				$note = $_POST['message'];
 				$token = createToken();
+				
 				$tokenDate = date('Y-m-d h:i:s',time());
+
+				$tokenTime = strtotime($tokenDate);
 
 				$idBill = $model->insertBill($idCustomer,$dateOrder,$total, $note, $token, $tokenDate);
 
@@ -68,10 +72,16 @@ class CheckoutController extends Controller{
 					}
 					else{
 						//gửi mail
+						$link = "http://localhost/shop1508/accept-order.php?token=$token&t=$tokenTime";
+						$subject = "Xác nhận đơn hàng mã số DH-$idBill";
+						$content = "Chào bạn $name, Vui lòng chọn link bên dưới để xác nhận đơn hàng của bạn: $link";
+
+						mailer($email,$name,$subject,$content);
+
 
 						//xóa session cart
-						unset($_SESSION['cart']);
-						unset($cart);
+						//unset($_SESSION['cart']);
+						//unset($cart);
 
 						setcookie('success',"Đặt hàng thành công, vui lòng kiểm tra hộp thư để xác nhận đơn hàng",time()+5);
 						header("Location:checkout.php");
