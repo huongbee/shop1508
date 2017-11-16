@@ -82,7 +82,7 @@ $foods = $data['foods'];
                     <div class="block-img"><img src="public/assets/images/hinh_mon_an/<?=$food->image?>" alt="" class="img img-responsive" style="height: 300px" >
                       <div class="block-circle price-wrapper"><span class="price woocommerce-Price-amount amount"><?=number_format($food->price)?></span> <span class="price-symbol">vnđ</span></div>
                       <div class="group-btn">
-                        <a href="chi-tiet-mon-an.html" class="swin-btn btn-link">
+                        <a href="<?=$food->id?>-<?=$food->url?>" class="swin-btn btn-link">
                           <i class="icons fa fa-link"></i>
                         </a>
                         <a href="javascript:void(0)" class="swin-btn btn-add-to-card" data-id="<?=$food->id?>">
@@ -92,7 +92,7 @@ $foods = $data['foods'];
                     </div>
     <!-- detail-food.php?id=<?=$food->id?>&alias=<?=$food->url?> -->
                     <div class="block-content">
-                      <h5 class="title"><a href="detail-food.php?id=<?=$food->id?>&alias=<?=$food->url?>"><?=$food->name?></a></h5>
+                      <h5 class="title"><a href="<?=$food->id?>-<?=$food->url?>"><?=$food->name?></a></h5>
                       <div class="product-info">
                        <?=$food->summary?>
                       </div>

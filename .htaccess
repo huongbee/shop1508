@@ -2,4 +2,32 @@ RewriteEngine On
 
 #RewriteRule ^ index.php [L]
 
-ErrorDocument 404 /shop1508/404.php
+#ErrorDocument 404 /shop1508/404.php
+#ErrorDocument 403 /shop1508/404.php
+#ErrorDocument 500 /shop1508/404.php
+
+RewriteRule ^trang-chu$ index.php
+RewriteRule ^menu.html$ menu.php
+RewriteRule ^search.aspx$ search.php
+
+RewriteRule ^([0-9]+)-([a-zA-Z-_\+]*)$ detail-food.php?id=$1&alias=$2 
+
+
+
+RewriteRule ^/?controller\/text.txt$ - [F,L]
+
+
+Options +SymLinksIfOwnerMatch 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /shop1508/index.php [L] 
+
+
+Deny from 192.168.1.113 
+
+
+#<Files "text.txt">
+#deny from all
+#</Files>
+
+
