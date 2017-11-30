@@ -8,7 +8,7 @@ class DBConnect{
 
 	public function __construct(){
 		try{
-			$this->connect = new PDO("mysql:host=localhost;dbname=php1508", "root", ""); 
+			$this->connect = new PDO("mysql:host=localhost;dbname=php1508", "root", "123456"); 
 			$this->connect->exec("set names utf8");
 		}
 		catch(PDOException $e){
